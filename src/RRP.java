@@ -28,13 +28,21 @@ public class RRP implements Algorithm {
 
         Task task = queue.poll();
 
+        int runTime;
+
         if (task.getBurst() > QUANTUM) {
-            System.out.println("Running task: " + task.getName() + " for " + QUANTUM + "ms");
+            runTime = QUANTUM;
             task.setBurst(task.getBurst() - QUANTUM);
             queue.add(task);
         }
-        else System.out.println("Running task: " + task.getName() + " for " + task.getBurst() + "ms");
+        else {
+            runTime = task.getBurst();
+            task.setBurst(0);
+        }
 
+        CPU.run(task);
+        System.out.println("Task " + task.getName() + " ran for " + runTime + "ms");
+        
         return task;
     }
 
