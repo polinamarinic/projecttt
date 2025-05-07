@@ -17,6 +17,10 @@ public class Task {
         return priority;
     }
 
+    public void setBurst(int burst) {
+        this.burst = burst;
+    }
+
     public int getBurst() {
         return burst;
     }
