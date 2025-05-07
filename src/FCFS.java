@@ -8,8 +8,8 @@ public class FCFS implements Algorithm {
 
     public void schedule() {
         while (!queue.isEmpty()) {
-            Task current = pickNextTask();
-            System.out.println("Running task: " + current);
+            Task next = pickNextTask();
+            CPU.run(next);
         }
     }
 

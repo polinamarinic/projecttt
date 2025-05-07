@@ -9,7 +9,7 @@ public class SJF implements Algorithm {
     public void schedule() {
         while (!queue.isEmpty()) {
             Task current = pickNextTask();
-            System.out.println("Running task: " + current);
+            CPU.run(current);
         }
     }
 
