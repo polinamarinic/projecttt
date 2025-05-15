@@ -1,11 +1,24 @@
+/**
+ * Implements Priority Scheduling.
+ * Tasks with higher priority values are executed first.
+ */
 import java.util.*;
+
 public class PrioritySc implements Algorithm {
     private ArrayList<Task> queue;
 
+    /**
+     * Creates a new Priority scheduler with the given list of tasks.
+     * @param tasks the list of tasks to schedule
+     */
     public PrioritySc(ArrayList<Task> tasks) {
         this.queue = new ArrayList<>(tasks);
     }
 
+    /**
+     * Schedules tasks based on their priority value.
+     */
+    @Override
     public void schedule() {
         while (!queue.isEmpty()) {
             Task next = pickNextTask();
@@ -13,6 +26,11 @@ public class PrioritySc implements Algorithm {
         }
     }
 
+    /**
+     * Picks and removes the task with the highest priority.
+     * @return the next task to run
+     */
+    @Override
     public Task pickNextTask() {
         if (queue.isEmpty()) return null;
 
