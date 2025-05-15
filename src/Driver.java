@@ -1,7 +1,14 @@
+/**
+ * Main driver class that reads tasks and runs the selected scheduling algorithm.
+ */
 import java.util.*;
 import java.io.*;
 
 public class Driver {
+    /**
+     * Main method to start the program.
+     * @param args the command-line arguments (algorithm name and file name)
+     */
     public static void main(String[] args) {
         String algorithm = args[0];
         String file = args[1];
@@ -20,6 +27,11 @@ public class Driver {
         scheduler.schedule();
     }
 
+    /**
+     * Reads tasks from the given file and returns them in a list.
+     * @param file the name of the file
+     * @return the list of tasks
+     */
     public static ArrayList<Task> readTasks(String file) {
         ArrayList<Task> tasks = new ArrayList<>();
         
