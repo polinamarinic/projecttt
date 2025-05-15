@@ -1,4 +1,11 @@
+/**
+ * Simulates the CPU running tasks.
+ */
 public class CPU {
+    /**
+     * Runs the given task by printing its name and simulating execution.
+     * @param task the task to run
+     */
     public static void run(Task task) {
         System.out.println("Running task: " + task.getName());
 
