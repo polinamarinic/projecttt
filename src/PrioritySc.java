@@ -16,11 +16,11 @@ public class PrioritySc implements Algorithm {
     public Task pickNextTask() {
         if (queue.isEmpty()) return null;
 
-        Task high = queue.get(0);
+        Task high = queue.get(0); // assume first as highest
         for (int i = 1; i < queue.size(); i++) {
             Task task = queue.get(i);
 
-            if (task.getPriority() > high.getPriority()) {
+            if (task.getPriority() > high.getPriority()) { // if current has higher priority, update high
                 high = task;
             }
         }

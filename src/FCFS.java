@@ -14,7 +14,7 @@ public class FCFS implements Algorithm {
     }
 
     public Task pickNextTask() {
-        if(!queue.isEmpty()) return queue.remove(0);
+        if(!queue.isEmpty()) return queue.remove(0); // return the first task if not empty
         else return null;
     }
 }

@@ -3,7 +3,7 @@ public class CPU {
         System.out.println("Running task: " + task.getName());
 
         try {
-            Thread.sleep(task.getBurst());
+            Thread.sleep(task.getBurst()); // pause thread for the burst duration
         } catch (InterruptedException e) {
             System.out.println("Task interrupted");
         }

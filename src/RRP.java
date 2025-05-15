@@ -4,8 +4,8 @@ public class RRP implements Algorithm {
     private Queue<Task> queue;
     private final int QUANTUM = 10;
 
-    public RRP(List<Task> tasks) {
-        for (int i = 0; i < tasks.size(); i++) {
+    public RRP(List<Task> tasks) { 
+        for (int i = 0; i < tasks.size(); i++) { // sort by priority, highest first
             for (int j = i + 1; j < tasks.size(); j++) {
                 if (tasks.get(i).getPriority() < tasks.get(j).getPriority()) {
                     Task temp = tasks.get(i);
@@ -30,7 +30,7 @@ public class RRP implements Algorithm {
 
         int runTime;
 
-        if (task.getBurst() > QUANTUM) {
+        if (task.getBurst() > QUANTUM) { // if burst higher than quantum, run for quantum and update burst
             runTime = QUANTUM;
             task.setBurst(task.getBurst() - QUANTUM);
             queue.add(task);
@@ -45,6 +45,4 @@ public class RRP implements Algorithm {
         
         return task;
     }
-
-
 }

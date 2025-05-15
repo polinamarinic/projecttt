@@ -17,11 +17,11 @@ public class SJF implements Algorithm {
     public Task pickNextTask() {
         if (queue.isEmpty()) return null;
 
-        Task shortest = queue.get(0);
+        Task shortest = queue.get(0); // make first task shortest 
         for (int i = 1; i < queue.size(); i++) {
             Task task = queue.get(i);
 
-            if (task.getBurst() < shortest.getBurst()) {
+            if (task.getBurst() < shortest.getBurst()) { // update shortest if found shorter than initially
                 shortest = task;
             }
         }
