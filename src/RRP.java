@@ -6,7 +6,7 @@ import java.util.*;
 
 public class RRP implements Algorithm {
     private Queue<Task> queue;
-    private final int QUANTUM = 10;
+    private final int QUANTUM = 4;
 
     /**
      * Creates a new RRP scheduler from the list of tasks.
